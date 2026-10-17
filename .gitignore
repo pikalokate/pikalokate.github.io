@@ -7,7 +7,7 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 
-# Private notes and AI working context — never publish (the repo is public)
+# Private notes and AI working context: never copied to the public website repo
 private/
 CLAUDE.md
 CLAUDE.local.md

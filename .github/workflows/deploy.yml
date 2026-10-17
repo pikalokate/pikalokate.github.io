@@ -1,4 +1,5 @@
 # Builds the site and publishes it to GitHub Pages at https://pikalokate.github.io.
+# Runs only in the public website repo. The private working repo copies its code there (publish.yml).
 # Runs on every push to main and every 6 hours, so the GitHub calendar stays fresh.
 # Optional: a CONTRIBUTIONS_TOKEN secret (a classic token with only the read:user scope)
 # makes sure private contribution counts are included. Without it, the built-in token is used,
@@ -24,6 +25,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.repository == 'pikalokate/pikalokate.github.io'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
