@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+dist/
+.env
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Private notes and AI working context — never publish (the repo is public)
+private/
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+.claude/

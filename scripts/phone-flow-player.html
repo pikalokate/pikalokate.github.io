@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1040px; height: 900px; overflow: hidden; background: #f4f4f5; font-family: Inter, sans-serif; color: #171717; -webkit-font-smoothing: antialiased; }
+  #side { position: absolute; left: 72px; top: 0; bottom: 0; width: 420px; display: flex; flex-direction: column; justify-content: center; }
+  #eyebrow { font-size: 15px; color: #737373; letter-spacing: -0.005em; }
+  #title { margin-top: 10px; font-size: 40px; line-height: 1.12; font-weight: 500; letter-spacing: -0.03em; }
+  #steps { margin-top: 36px; list-style: none; }
+  #steps li { display: flex; gap: 16px; align-items: baseline; padding: 9px 0; font-size: 19px; line-height: 1.35; color: #b4b4b4; transition: color .35s ease; letter-spacing: -0.01em; }
+  #steps li span { font-size: 13px; width: 22px; font-variant-numeric: tabular-nums; color: inherit; }
+  #steps li.on { color: #171717; }
+  #steps li.done { color: #737373; }
+  #phone { position: absolute; left: 592px; top: 50%; width: 368px; height: 796px; transform: translateY(-50%); border-radius: 46px; background: #fff; border: 1px solid #e2e2e4; box-shadow: 0 30px 60px -30px rgba(0,0,0,.18); overflow: hidden; }
+  .scr { position: absolute; left: 0; top: 0; width: 368px; will-change: transform; background: #fff; }
+  .scr img { display: block; width: 368px; height: auto; }
+  .tap { position: absolute; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: rgba(23,23,23,.16); border: 2px solid rgba(23,23,23,.55); pointer-events: none; opacity: 0; transform: scale(.5); z-index: 50; }
+  .tap.go { animation: tap .62s ease-out forwards; }
+  @keyframes tap { 0% { opacity: 0; transform: scale(.5); } 25% { opacity: 1; transform: scale(1); } 60% { opacity: 1; transform: scale(.88); } 100% { opacity: 0; transform: scale(1.25); } }
+</style>
+</head>
+<body>
+<div id="side"><p id="eyebrow"></p><h1 id="title"></h1><ol id="steps"></ol></div>
+<div id="phone"></div>
+<script>
+const S = 368 / 390; // screen scale
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const phone = document.getElementById('phone');
+let cur = null;
+
+function makeScreen(src) {
+  const d = document.createElement('div'); d.className = 'scr';
+  const im = new Image(); im.src = src; d.appendChild(im); d._img = im; d._scroll = 0;
+  return d;
+}
+function anim(el, kf, ms, easing = 'cubic-bezier(.32,.72,0,1)') {
+  return el.animate(kf, { duration: ms, easing, fill: 'forwards' }).finished;
+}
+async function tap(x, y) {
+  const t = document.createElement('div'); t.className = 'tap';
+  t.style.left = x * S + 'px'; t.style.top = (y * S - cur._scroll) + 'px';
+  phone.appendChild(t); requestAnimationFrame(() => t.classList.add('go'));
+  await sleep(380); setTimeout(() => t.remove(), 600);
+}
+async function scrollTo(px, ms) {
+  const from = cur._scroll, to = px;
+  await anim(cur, [{ transform: `translateY(${-from}px)` }, { transform: `translateY(${-to}px)` }], ms, 'cubic-bezier(.45,.05,.25,1)');
+  cur._scroll = to;
+}
+async function show(src, trans) {
+  const n = makeScreen(src); await n._img.decode();
+  if (!cur) { phone.appendChild(n); cur = n; return; }
+  phone.appendChild(n);
+  const old = cur;
+  if (trans === 'fade') {
+    n.style.opacity = 0;
+    await anim(n, [{ opacity: 0 }, { opacity: 1 }], 260, 'ease');
+  } else {
+    const oy = -old._scroll;
+    await Promise.all([
+      anim(n, [{ transform: 'translateX(100%)' }, { transform: 'translateX(0)' }], 560),
+      anim(old, [{ transform: `translate(0, ${oy}px)`, filter: 'brightness(1)' }, { transform: `translate(-28%, ${oy}px)`, filter: 'brightness(.94)' }], 560),
+    ]);
+  }
+  old.remove(); cur = n;
+}
+function setStep(i) {
+  [...document.querySelectorAll('#steps li')].forEach((li, k) => { li.className = k < i ? 'done' : k === i ? 'on' : ''; });
+}
+window.run = async (flow) => {
+  document.getElementById('eyebrow').textContent = flow.eyebrow;
+  document.getElementById('title').textContent = flow.title;
+  const ol = document.getElementById('steps');
+  flow.steps.filter(s => s.label).forEach((s, k) => { const li = document.createElement('li'); li.innerHTML = `<span>${String(k + 1).padStart(2, '0')}</span>${s.label}`; ol.appendChild(li); });
+  // preload
+  await Promise.all(flow.steps.map(s => { const i = new Image(); i.src = s.img; return i.decode(); }));
+  await document.fonts.ready;
+  let g = -1;
+  for (const [k, s] of flow.steps.entries()) {
+    if (s.label) { g++; }
+    if (k === 0) { await show(s.img); setStep(g); await sleep(250); window.started = true; await sleep(900); }
+    else { setStep(g); if (s.trans !== 'none') await show(s.img, s.trans); }
+    await sleep((s.hold ?? 0.9) * 1000);
+    if (s.scroll !== undefined) { await scrollTo(s.scroll * S, s.scrollMs ?? 1400); await sleep(500); }
+    if (s.tap) { await tap(s.tap[0], s.tap[1]); }
+  }
+  await sleep(1600);
+  window.done = true;
+};
+</script>
+</body>
+</html>

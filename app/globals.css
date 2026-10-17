@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/*
+ * Neutral palette. The --color-background / foreground / border / muted-foreground
+ * names are also what ContributionSkyline reads, so the calendar matches the page.
+ */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-muted-foreground: #737373;
+  --color-subtle: #a3a3a3;
+  --color-border: #e5e5e5;
+  --color-frame: #f4f4f5;
+  --color-frame-hover: #ececee;
+}
+
+html {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  background: #171717;
+  color: #ffffff;
+}
+
+/* Entrance: content rises in, in order. --i sets the step. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+.rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
+
+/* Homepage scroll reveal (components/ScrollReveal.tsx). --d sets a small stagger. */
+.reveal [data-reveal]:not(.revealed) {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(6px);
+}
+.reveal [data-reveal] {
+  transition:
+    opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--d, 0) * 110ms);
+}
+
+/* Sticky case-study header: a hairline appears once the page scrolls (where scroll-driven animations exist). */
+.sticky-bar {
+  border-bottom: 1px solid transparent;
+}
+@supports (animation-timeline: scroll()) {
+  .sticky-bar {
+    animation: bar-line linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 48px;
+  }
+  @keyframes bar-line {
+    to {
+      border-bottom-color: var(--color-border);
+    }
+  }
+}
