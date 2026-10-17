@@ -1,6 +1,9 @@
 import { ImageResponse } from "next/og"
 import { site } from "@/lib/site"
 import contributions from "@/data/contributions.json"
+import { readFile } from "node:fs/promises"
+import { join } from "node:path"
+import sharp from "sharp"
 
 export const ogSize = { width: 1200, height: 630 }
 
@@ -51,3 +54,34 @@ export function ogImage(eyebrow: string, title: string, line: string) {
 }
 
 export const homeOg = () => ogImage(site.role, site.name, site.intro)
+
+// Case-study card: text on the left, the homepage card cover on the right, bleeding off the edge.
+// next/og can't read .webp, so the cover is turned into a PNG first.
+export async function caseStudyOg(title: string, summary: string, cover?: string) {
+  const img = cover
+    ? "data:image/png;base64," +
+      (await sharp(await readFile(join(process.cwd(), "public", cover))).resize(1120, 840).png().toBuffer()).toString("base64")
+    : null
+  return new ImageResponse(
+    (
+      <div style={{ width: "100%", height: "100%", display: "flex", background: "#ffffff", color: "#171717", fontFamily: "sans-serif" }}>
+        <div style={{ width: 540, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "60px 40px 56px 64px" }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", fontSize: 22, color: "#737373" }}>Case study</div>
+            <div style={{ display: "flex", marginTop: 20, fontSize: 50, letterSpacing: -1.6, lineHeight: 1.08 }}>{title}</div>
+            <div style={{ display: "flex", marginTop: 22, fontSize: 25, lineHeight: 1.35, color: "#525252" }}>{summary}</div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", fontSize: 21, lineHeight: 1.4 }}>
+            <div style={{ display: "flex", color: "#171717" }}>{`${site.name} · ${site.role}`}</div>
+            <div style={{ display: "flex", color: "#a3a3a3" }}>{HOST}</div>
+          </div>
+        </div>
+        {img ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={img} width={840} height={630} alt="" style={{ position: "absolute", left: 560, top: 0 }} />
+        ) : null}
+      </div>
+    ),
+    ogSize,
+  )
+}

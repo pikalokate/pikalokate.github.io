@@ -1,4 +1,4 @@
-import { ogImage, ogSize } from "@/lib/og"
+import { caseStudyOg, ogSize } from "@/lib/og"
 import { projects, site } from "@/lib/site"
 
 export const dynamic = "force-static"
@@ -14,5 +14,5 @@ export function generateStaticParams() {
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const p = projects.find((x) => x.slug === slug)
-  return ogImage(`Case study · ${site.name}, ${site.role}`, p?.title ?? site.name, p?.summary ?? "")
+  return caseStudyOg(p?.title ?? site.name, p?.summary ?? "", p?.cover)
 }
