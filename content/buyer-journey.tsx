@@ -297,22 +297,19 @@ const study: Study = {
               The emails follow the same theme as the portal, dark or light. So when a buyer clicks &ldquo;Update Card&rdquo;,
               the page they land on already feels familiar.
             </P>
-            <div className="my-10 grid gap-6 sm:grid-cols-2">
-              <Media
-                src="/projects/buyer-journey/portal-sub-dark.webp"
-                alt="The subscription in the Order Portal with the dark theme: black side panel with Order Manager and the merchant name, and the order on white."
-                width={2880}
-                height={1800}
-                caption="The dark theme, the same order."
-              />
-              <Media
-                src="/projects/buyer-journey/portal-invoice-dark.webp"
-                alt="The invoice page with the dark theme: the invoice card sits on a black panel, with the summary on white."
-                width={2880}
-                height={1800}
-                caption="The invoice, dark theme."
-              />
-            </div>
+            <P>
+              The first portal was dark only. I built a light theme in code, so merchants can choose how their buyers&rsquo;
+              experience looks, and pick what suits their store. Each merchant chooses the theme in their profile. Light is the
+              default, and a small preview shows what their buyers will see.
+            </P>
+            <Media
+              src="/projects/buyer-journey/theme-setting.webp"
+              alt="Merchant profile, Theme tab: 'Choose how Customer Portal looks', with two preview cards, Light (clean and simple, selected) and Dark (high-contrast)."
+              frame="crop"
+              width={2140}
+              height={870}
+              caption="The theme setting in the merchant&rsquo;s profile."
+            />
           </Decision>
         </>
       ),
@@ -442,37 +439,6 @@ const study: Study = {
               height={1800}
             />
           </div>
-          <H3>A lighter portal</H3>
-          <P>
-            The first portal was dark only. I built a light theme in code, so merchants can choose how their buyers&rsquo;
-            experience looks, and pick what suits their store. Each merchant chooses the theme in their profile. Light is the
-            default, and a small preview shows what their buyers will see.
-          </P>
-          <Media
-            src="/projects/buyer-journey/theme-setting.webp"
-            alt="Merchant profile, Theme tab: 'Choose how Customer Portal looks', with two preview cards, Light (clean and simple, selected) and Dark (high-contrast)."
-            frame="crop"
-            width={2140}
-            height={870}
-            caption="The theme setting in the merchant's profile."
-          />
-          <div className="my-10 grid gap-6 sm:grid-cols-2">
-            <Media
-              src="/projects/buyer-journey/portal-single-light.webp"
-              alt="A completed single-payment order in the light theme: light grey side panel."
-              width={2880}
-              height={1800}
-              caption="Light"
-            />
-            <Media
-              src="/projects/buyer-journey/portal-single-dark.webp"
-              alt="The same completed order in the dark theme: black side panel."
-              width={2880}
-              height={1800}
-              caption="Dark"
-            />
-          </div>
-
           <H3>Making the rules easy to build</H3>
           <P>
             With Onbold as the legal seller, the checkout has to show the right legal text for each product. Does the seller have

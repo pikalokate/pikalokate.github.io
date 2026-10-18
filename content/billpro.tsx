@@ -4,14 +4,13 @@ import { Decision, H3, Lead, List, P, Pills, Quote, Split, Stats } from "@/compo
 
 const study: Study = {
   eyebrow: "Case study · Billing platform · UX",
-  headline: "Making a complex billing platform clear and easy to use every day",
+  headline: "Turning a hard-to-use billing platform into one merchants can run every day",
   summary: (
     <>
-      Billpro lets online merchants sell with single payments, instalments, subscriptions and usage-based billing. The old
-      platform could do all of this, but it was hard to understand and hard to use: every option on screen at once, and
-      flows that mixed everything together. I redesigned the platform, the screens and the logic behind the flows, so every
-      merchant, new or experienced, can create products, orders and customers and find their way every day. Later I started shipping new features myself, in code
-      with AI. The biggest one is product pages.
+      Billpro lets online merchants sell with single payments, instalments, subscriptions and usage-based billing. It
+      replaced an older platform that could do a lot but was hard to use: every option on screen at once, and flows that
+      mixed everything together. I redesigned the flows and the logic behind them, added new features, and fixed many small
+      details along the way, all in Figma. Since 2026 I also ship features myself, in code with AI, like product pages.
     </>
   ),
   meta: [
@@ -31,7 +30,7 @@ const study: Study = {
   },
   results: [
     <>A platform that&rsquo;s easier to use every day: clear flows for products, orders and customers, one decision at a time.</>,
-    <>A clear start. New merchants see three first actions and short guides as soon as they log in.</>,
+    <>A clear start. New merchants see three steps to their first order and short guides as soon as they log in.</>,
     <>Product pages, from idea to code by me: I scoped, designed and built both the merchant side and the buyer side.</>,
   ],
   sections: [
@@ -85,6 +84,10 @@ const study: Study = {
                 <b className="font-medium">A small team.</b> One designer, two front-end developers and one back-end developer
                 for the whole platform.
               </>,
+              <>
+                <b className="font-medium">No time to rebuild everything.</b> We couldn&rsquo;t rewrite the whole platform at once,
+                so every change to the logic had to be worth the time it took to build.
+              </>,
             ]}
           />
         </>
@@ -93,13 +96,13 @@ const study: Study = {
     {
       id: "role",
       nav: "My role",
-      title: "I owned the design. Later I also shipped code",
+      title: "I designed the platform. Now I also ship code",
       body: (
         <>
           <P>
-            I&rsquo;m the only designer at the company. I started Billpro in Figma: the user journeys and the logic behind
-            them, every screen, and the design system. The developers built it, front end and back end. Later I moved to
-            designing and building in code with AI, and now I ship new features to the app myself.
+            I&rsquo;m the only designer at the company. I designed Billpro in Figma: the user journeys and the logic behind
+            them, every screen and the design system. The developers built it. Later I moved to designing and building in code
+            with AI, and now I also ship features to the app myself.
           </P>
           <Split
             cols={[
@@ -107,12 +110,11 @@ const study: Study = {
                 title: "What I owned",
                 items: [
                   "A review of the old platform: where the journey breaks",
-                  "New flows for Home, products, orders, customers and many more",
-                  "Lists, order pages, payment views and the dashboard",
-                  "Every screen in Figma, desktop and mobile",
+                  "New flows and features across the whole platform: Home, dashboard, products, orders, customers, payments, taxes and settings",
+                  "Every screen, desktop and mobile, as clickable prototypes in Figma",
+                  "Which changes to build first, agreed with the developers",
                   "The design system: components, states and colour tokens",
                   "Product pages: scope, flows, design and front-end code",
-                  "Webhook screens: a working prototype in code",
                 ],
               },
               {
@@ -127,89 +129,6 @@ const study: Study = {
               },
             ]}
           />
-          <P>
-            I ship front-end code: screens and components. The developers review it and connect the APIs and the logic behind
-            it.
-          </P>
-        </>
-      ),
-    },
-    {
-      id: "platform",
-      nav: "The platform",
-      title: "A big platform, not just two forms",
-      body: (
-        <>
-          <Lead>
-            Product and order creation are the heart of this story. But Billpro is a full back office, and I designed all of it:
-            orders, customers, products with taxes, discounts, fees, groups and units, three payment views, a dashboard and
-            alerts.
-          </Lead>
-          <Media
-            src="/projects/billpro/platform-tour.mp4"
-            poster="/projects/billpro/platform-tour-poster.webp"
-            alt="Recording of a walk through Billpro: the orders list, one order with its summary and billing events, the customers list and a customer account, products, taxes, all processed payments, and the dashboard."
-            width={1440}
-            height={900}
-            caption="A walk through the platform: orders, one order in detail, customers, products and taxes, payments, and the dashboard. Other merchants’ data is blurred."
-          />
-          <H3>Tables people work in every day</H3>
-          <P>
-            Merchants spend most of their time in lists: orders, customers and products. So every list follows the same pattern.
-            Four summary cards on top, like Active, Complete, Failed and Suspended. Then filters, a date range and search. Then
-            the table, with a status icon at the start of each row. Learn one list, and you know them all.
-          </P>
-          <Media
-            src="/projects/billpro/list-orders.webp"
-            alt="Orders list: four summary cards (Active, Complete, Failed, Suspended), filters, date and search, and a table with created date, IDs, customer, order type, value, currency, payment count and amount paid."
-            width={2880}
-            height={1800}
-            caption="Orders: summary cards, filters and search, then the table. Products and customers work the same way."
-          />
-          <H3>One order, every detail in its place</H3>
-          <P>
-            An order can run for months, so its page has to hold a lot without feeling heavy. A side menu splits it into seven
-            parts: Summary, Customer, Cards, Billing Events, Products, Order Logs, and Notes &amp; Tags. Billing Events shows every
-            payment in the schedule, paid or planned. When a payment needs attention, the actions are right above the list.
-          </P>
-          <Media
-            src="/projects/billpro/order-summary.webp"
-            alt="Order Summary of a subscription order: side menu with Summary, Customer, Cards, Billing Events, Products, Order Logs and Notes & Tags. The summary shows status Active, the customer, order type, channel, auto retry, dates, interval and amounts."
-            width={2880}
-            height={2512}
-            caption="Order Summary: the status, the customer and the key facts first, then dates and amounts. The other six parts are one click away."
-          />
-          <H3>Following the money</H3>
-          <P>
-            Payments have their own section, built around the questions merchants ask about money. Each view answers one of them:
-          </P>
-          <List
-            items={[
-              <>
-                <b className="font-medium">Pending Orders: who hasn&rsquo;t paid yet?</b> Orders waiting for their first payment,
-                how long they&rsquo;ve waited, and how many reminder emails went out.
-              </>,
-              <>
-                <b className="font-medium">All Processed: what came in?</b> Every payment, with totals on top for first payments,
-                repeat payments, declines and refunds.
-              </>,
-              <>
-                <b className="font-medium">Billing Exceptions: what failed?</b> Recurring payments that didn&rsquo;t go through,
-                with the retry count and whether automatic retry is on.
-              </>,
-            ]}
-          />
-          <Media
-            src="/projects/billpro/pay-processed.webp"
-            alt="All Processed: totals for initial, repeated, declined and refunded payments, and a table of payments with gateway ID, order type and amount."
-            width={2880}
-            height={1800}
-            caption="All Processed: every payment, with the totals on top."
-          />
-          <P>
-            The same status icons, colours and table parts run through all of these views. They come from the design system
-            described below.
-          </P>
         </>
       ),
     },
@@ -282,25 +201,26 @@ const study: Study = {
       body: (
         <>
           <P>
-            This was more than new screens. To make the journeys simpler, the platform had to work differently: the purchase
-            type now decides which fields you see, recurring products have separate initial and recurring amounts, a missing
-            tax, unit or product can be created without leaving the form, and an order takes its setup from the
-            product. I designed these rules together with the screens, and the developers built them into the app.
+            Simpler screens weren&rsquo;t enough. Some journeys needed the platform to work differently: the purchase type now
+            decides which fields you see, recurring products get separate initial and recurring amounts, and a missing tax,
+            unit or product can be created without leaving the form. We couldn&rsquo;t change everything at once, so for each
+            change I weighed how much it helps merchants against how long it takes to build, and agreed the order with the
+            developers.
           </P>
           <Decision
             n={1}
             title="A Home that tells you where to start"
             options="Open on the dashboard with charts. Open on an empty list of orders. A Home page built for getting started."
-            chose="A new Home page with three big actions in the order you need them: Add Order, Add Customer, Add Product. Below them, a short overview and a Learning Center with guides and videos for each billing type."
+            chose="A new Home page. New merchants see a “How to Get Started” banner with three steps in the right order: create a product, add a customer, create an order. Every merchant gets quick Add buttons, a short overview, and a Learning Center with guides and videos for each billing type."
             why="A new merchant has no data yet, so charts tell them nothing. What they need is the next step, and a place to learn without calling us."
-            tradeoff="Experienced merchants scroll past the guides. I kept them below the actions and the overview, so they never get in the way."
+            tradeoff="Experienced merchants don’t need the steps. The banner shows only in a merchant’s first month, and the guides sit below the overview, so they never get in the way."
           >
             <Media
               src="/projects/billpro/home.webp"
-              alt="The new Billpro Home: 'Hi Kate', buttons Add Order, Add Customer and Add Product, an overview of orders, customers and products, and a Learning Center with six guide cards."
+              alt="The new Billpro Home for a new merchant: Add buttons, a 'How to Get Started' banner with three connected steps (Create a Product, Add a Customer, Create an Order), an overview of orders, customers and products, and a Learning Center with six guide cards."
               width={2880}
-              height={2228}
-              caption="Home: three first actions, a quick overview, and guides for single payment, instalment, subscription and metered billing."
+              height={2726}
+              caption="Home for a new merchant: the three steps to a first order, a quick overview, and guides for every billing type."
             />
           </Decision>
 
@@ -330,7 +250,7 @@ const study: Study = {
             </div>
             <P>
               In the live app the whole flow is a short window with four steps: details, purchase type, price, and product page.
-              Extra fields like long description and group stay behind &ldquo;More options&rdquo;. In code, I later cut one
+              Extra fields like long description and group stay behind &ldquo;More options&rdquo;. Later, in code, I cut one
               more step from the subscription flow by moving the charge interval into the price step.
             </P>
           </Decision>
@@ -356,7 +276,6 @@ const study: Study = {
                   The price step for a £12 monthly subscription. The charge interval sits with the price, initial and recurring
                   amounts are side by side, and a missing tax can be added without leaving.
                 </P>
-                <P>Compare it with the old form above. This isn&rsquo;t the same form with a new look: the fields follow the purchase type, and initial and recurring amounts are calculated separately.</P>
               </div>
             </div>
           </Decision>
@@ -365,7 +284,7 @@ const study: Study = {
             n={4}
             title="Rebuild order creation around what the merchant has, and what they don’t"
             options="Keep the old order form and tidy it up. Split it into a long wizard. Rebuild the flow so the merchant never has to leave it."
-            chose="A new Add Order flow. If the product doesn’t exist yet, the merchant creates it right inside the order with the + button, just like a new customer. Before, there was no way to add a product from the order: they had to leave it and start again. Fee, discount and tax per product are hidden until you need them, behind one “Show” link. And with product groups, a merchant adds a whole group of products in one go instead of one by one."
+            chose="A new Add Order flow. If the product doesn’t exist yet, the merchant creates it right inside the order with the + button, just like a new customer. Before, there was no way to add a product from the order: they had to leave it and start again. Fee, discount and tax per product are hidden until you need them, behind one “Show” link. And with product groups, merchants sort their products into their own categories, then switch the picker to Group and find the right product faster."
             why="Order creation is the task merchants repeat most. Every time they had to stop, leave and come back, they lost their work and their trust in the tool. Now the common order takes a customer, a product and a quantity, and everything else is there when needed."
             tradeoff="Creating a customer or a product inside an order needs smaller forms in a window. I kept them to the key fields, and the full forms stay on their own pages."
           >
@@ -378,6 +297,93 @@ const study: Study = {
               caption="Add Order: pick a customer, pick a product, open fee, discount and tax only if needed, and check the summary."
             />
           </Decision>
+        </>
+      ),
+    },
+    {
+      id: "platform",
+      nav: "The platform",
+      title: "A big platform, not just two forms",
+      body: (
+        <>
+          <Lead>
+            Product and order creation are the heart of this story. But Billpro is a full back office, and I designed all of it:
+            orders, customers, products with taxes, discounts, fees, groups and units, payment views, a dashboard, alerts,
+            and profile and user settings.
+          </Lead>
+          <Media
+            src="/projects/billpro/platform-tour.mp4"
+            poster="/projects/billpro/platform-tour-poster.webp"
+            alt="Recording of a walk through Billpro: the orders list, one order with its summary and billing events, the customers list and a customer account, products, taxes, all processed payments, and the dashboard."
+            width={1440}
+            height={900}
+            caption="A walk through the platform: orders, one order in detail, customers, products and taxes, payments, and the dashboard. Other merchants’ data is blurred."
+          />
+          <H3>Tables people work in every day</H3>
+          <P>
+            Merchants spend most of their time in lists: orders, customers, products, payments. So every list page has the same
+            structure. On top, a small dashboard with the key numbers for that list. Below it, the tools for that table: filters
+            made for its data, a date picker and search. Then the table itself. Once you know one page, you can find your way
+            around all of them.
+          </P>
+          <Media
+            src="/projects/billpro/pay-processed.webp"
+            alt="All Processed payments: key numbers on top for initial, repeated, declined and refunded payments, then filters, date and search, then a table of payments with gateway ID, order type and amount."
+            width={2880}
+            height={1800}
+            caption="All Processed payments: key numbers on top, then filters, date and search, then the table. Every list page works the same way."
+          />
+          <H3>One order, every detail in its place</H3>
+          <P>
+            An order can run for months, so its page has to hold a lot without feeling heavy. A side menu splits it into seven
+            parts: Summary, Customer, Cards, Billing Events, Products, Order Logs, and Notes &amp; Tags. Billing Events shows every
+            payment in the schedule, paid or planned. When a payment needs attention, the actions are right above the list.
+          </P>
+          <Media
+            src="/projects/billpro/order-summary.webp"
+            alt="Order Summary of a subscription order: side menu with seven parts, status Active, the customer, order type, channel, auto retry, and the key dates."
+            width={2880}
+            height={1800}
+            caption="Summary: the status and the key facts first."
+          />
+          <Media
+            src="/projects/billpro/order-events.webp"
+            alt="Billing Events of an instalment order: actions above the list, and a table of scheduled and completed payments with amount, status and dates. The customer name is blurred."
+            width={2880}
+            height={1800}
+            caption="Billing Events: every payment in the schedule, with the actions above."
+          />
+          <P>
+            The same status icons, colours and table parts run through all of these views. They come from the design system
+            described below.
+          </P>
+        </>
+      ),
+    },
+    {
+      id: "system",
+      nav: "Design system",
+      title: "One system behind every screen",
+      body: (
+        <>
+          <P>
+            All of this sits on the Billpro design system. I designed it in Figma: around 200 component sets and 1,500
+            components, from buttons, inputs, selects and date pickers to tables, filters, summary cards, payment cards, and a
+            full set of status icons for orders, payments and billing events. The developers built the
+            components in Storybook, with colour tokens that use the same names as my Figma variables.
+          </P>
+          <Media
+            src="/projects/billpro/ds-board.webp"
+            alt="Billpro design system board: a list of 28 component groups on the left, and on the right buttons in every style and state, a date picker with range presets, an open filter panel, a data table with selection, a tooltip and an expanded row, order status badges, an input in five states, and toast messages."
+            frame="crop"
+            width={2400}
+            height={3260}
+            caption="A slice of the library in Figma: 28 component groups, and a few of them up close with their states."
+          />
+          <P>
+            The shared names paid off. When we launched our new brand, Onbold, I changed the colour values behind the tokens in
+            one commit and kept their names, so every screen moved to the new look and no component broke.
+          </P>
         </>
       ),
     },
@@ -424,8 +430,6 @@ const study: Study = {
           <Stats
             items={[
               { value: "2", label: "sides I built: merchant and buyer" },
-              { value: "4", label: "short steps to a new product" },
-              { value: "6", label: "photos per product page" },
               { value: "1", label: "link to share anywhere" },
             ]}
           />
@@ -452,10 +456,10 @@ const study: Study = {
           <Media
             src="/projects/billpro/buyer-flow.mp4"
             poster="/projects/billpro/buyer-flow-poster.webp"
-            alt="Recording of the buyer side: the buyer browses the photos, picks the colour Black, presses Continue to payment, fills in name, email, address, country and postal code, agrees to the terms, and reaches the checkout with the card form and Pay Now."
+            alt="Recording of the buyer side: the buyer browses the photos, keeps the colour White, presses Continue to payment, fills in name, email, address, country and postal code, agrees to the terms, types a test card (the Visa logo appears), and presses Pay Now."
             width={1440}
             height={900}
-            caption="The buyer side, from the link to checkout: photos, options, customer details, then the card form. The order summary stays on the left the whole way."
+            caption="The buyer side, from the link to payment: photos, options, customer details, then the card. The order summary stays on the left the whole way. Recorded on staging with a test card."
           />
           <H3>Rebuilt for mobile</H3>
           <P>
@@ -496,7 +500,7 @@ const study: Study = {
             title="Ship options as names now, link them to photos later"
             options="Wait and build full variants, where each colour has its own photos. Ship simple options now: a name and a list of values."
             chose="Options are plain names for now, like Colour: White, Black, Silver. The buyer picks one and it goes with the order, but it doesn’t switch the photo. I agreed this scope with the developers, the CEO and the team."
-            why="Merchants needed product pages right away. Simple options cover most cases today, and the data can grow into full variants later without changing the page."
+            why="Linking each option to its own photos needs extra logic, and the developers didn’t have time to build it before launch. Merchants needed product pages right away, so we shipped plain options first and added the photo link to the plan as a next task."
             tradeoff="When a buyer picks Black, the gallery still shows the white photo. Linking each option to its own photos is the next step."
           />
 
@@ -507,55 +511,6 @@ const study: Study = {
             API.
           </P>
           <Pills items={["Vue 3", "TypeScript", "Tailwind CSS", "Storybook", "GitHub pull requests", "Claude as pair programmer"]} />
-        </>
-      ),
-    },
-    {
-      id: "system",
-      nav: "Design system",
-      title: "One system behind every screen",
-      body: (
-        <>
-          <P>
-            All of this sits on the Billpro design system. I designed it in Figma: around 200 component sets and 1,500
-            components, from buttons, inputs, selects and date pickers to tables, filters, summary cards, payment cards, and a
-            full set of status icons for orders, payments and billing events. The developers built the
-            components in Storybook, with colour tokens that use the same names as my Figma variables.
-          </P>
-          <div className="my-10 grid gap-6 sm:grid-cols-2">
-            <Media
-              src="/projects/billpro/ds-cover.webp"
-              alt="Billpro design system cover with inputs, a select with search, multi-select tags and buttons in several states."
-              frame="crop"
-              width={1920}
-              height={1080}
-            />
-            <Media
-              src="/projects/billpro/ds-status.webp"
-              alt="Status set: order statuses, billing event statuses, transaction results and badges, each with an icon and a label."
-              frame="crop"
-              width={1439}
-              height={1626}
-            />
-            <Media
-              src="/projects/billpro/ds-datepicker.webp"
-              alt="Date pickers: single date, date range with presets like Today and This week, and time selection."
-              frame="crop"
-              width={1664}
-              height={2000}
-            />
-            <Media
-              src="/projects/billpro/ds-card.webp"
-              alt="Payment card rows with card brand, masked number, expiry and status badges such as Default, Expired and 3DS."
-              frame="crop"
-              width={1373}
-              height={1350}
-            />
-          </div>
-          <P>
-            The shared names paid off. When we launched our new brand, Onbold, I changed the colour values behind the tokens in
-            one commit and kept their names, so every screen moved to the new look and no component broke.
-          </P>
         </>
       ),
     },
