@@ -1,6 +1,6 @@
 # Kate Pikalo — Portfolio
 
-Head of Product Design in fintech and payments. I design products and build the interface in code with AI.
+Lead Product Designer in fintech and payments. I design products and build the interface in code with AI.
 
 **Live site: [pikalokate.github.io](https://pikalokate.github.io)**
 

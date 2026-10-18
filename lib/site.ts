@@ -1,16 +1,16 @@
 export const site = {
   name: "Kate Pikalo",
-  role: "Head of Product Design",
+  role: "Lead Product Designer",
   intro: "I design fintech products and build the interface in code with AI.",
   description:
-    "Kate Pikalo, Head of Product Design in fintech and payments. I design products in Figma and in code, and ship front-end code to our real product with AI.",
-  tagline: "Senior Product Designer · Builds in code with AI",
+    "Kate Pikalo, Lead Product Designer in fintech and payments. I design products in Figma and in code, and ship front-end code to our real product with AI.",
+  tagline: "Fintech & Payments · Builds in code with AI",
   location: "Barcelona, Spain",
   /** Short strong points under the name. Written for a lead designer who doesn't know Kate yet. */
   strengths: [
     {
-      title: "Prototype and ship in code",
-      text: "I build working prototypes in code with AI and push front-end code (screens and components) to our real product. Developers connect the APIs and logic.",
+      title: "Design and ship in code",
+      text: "I build pages, components and full features in code with AI and ship them to our live products. Developers connect them to the APIs and logic.",
     },
     {
       title: "Strong UX/UI background",
@@ -18,7 +18,7 @@ export const site = {
     },
     {
       title: "Own the design decisions",
-      text: "As Head of Product Design, I own UX, UI and visual style across three fintech platforms. I shape direction together with the CEO, operations and developers.",
+      text: "As Lead Product Designer, I own UX, UI and visual style across three fintech platforms. I shape direction together with the CEO, operations and developers.",
     },
     {
       title: "Fintech and payments",
@@ -26,7 +26,7 @@ export const site = {
     },
   ],
   about: [
-    "I'm Head of Product Design at a fintech company in Barcelona. We provide payment services for merchants: a billing platform for one-off, instalment, subscription and usage-based payments, merchant accounts for card acceptance, and a Merchant of Record service that sells on the merchant's behalf and takes on payments, tax and compliance. I design both sides: the B2B tools merchants run their business in, and the checkout and order pages their customers use. I own UX, UI and visual style across all of it, and I work every day with our developers, the operations team and the CEO.",
+    "I'm the Lead Product Designer at a fintech company. We provide payment services for merchants: a billing platform for one-off, instalment, subscription and usage-based payments, merchant accounts for card acceptance, and a Merchant of Record service that sells on the merchant's behalf and takes on payments, tax and compliance. I design both sides: the B2B tools merchants run their business in, and the checkout and order pages their customers use. I own UX, UI and visual style across all of it, and I work every day with our developers, the operations team and the CEO.",
     "I hold a master's degree in fine arts and started my career in a creative agency, working on brand and strategy. Then I moved into product design and worked on crypto and fintech products. For years I designed full platforms in Figma. Now I design and build in code with AI, so ideas get tested with real interactions, and developers get screens that already work. Strong design thinking comes first; code is how I get it to users faster.",
   ],
   github: { label: "GitHub", handle: "pikalokate", url: "https://github.com/pikalokate" },
