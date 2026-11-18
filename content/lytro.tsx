@@ -8,19 +8,19 @@ const SITE = "https://lytro.figma.site/"
 const flow = { width: 2080, height: 1800 }
 
 const study: Study = {
-  eyebrow: "Lytro · Case study · Concept, paused before launch",
+  eyebrow: "Lytro · Case study · Mobile app, waiting for legal approval to launch",
   headline: "A stablecoin app that feels like normal money",
   summary: (
     <>
       Lytro is a mobile app for people who live and earn across borders. It keeps money in stablecoins, but people see euros and
       dollars, not crypto. I researched payment apps on my own, then proposed and designed every flow: sign-up, the identity
-      check, Home, six ways to add money, sending, converting and a virtual card. The app is a concept, paused before launch.
+      check, Home, six ways to add money, sending, converting and a virtual card. The main flows are designed in Figma, and the company is now waiting for the legal approvals a stablecoin app needs before it can launch.
     </>
   ),
   meta: [
-    { label: "My role", value: "Product design end to end: research, flows, UI, design system, landing page" },
+    { label: "My role", value: "Product design end to end: research, UX and user flows, UI, design system, landing page" },
     { label: "Team", value: "CEO, a partner crypto company, me" },
-    { label: "Timeline", value: "Late 2025 – early 2026 · concept" },
+    { label: "Timeline", value: "Late 2025 – early 2026 · launch waiting for legal approval" },
     { label: "Platform", value: "Mobile app, plus a landing page in Figma Sites" },
   ],
   hero: {
@@ -31,7 +31,7 @@ const study: Study = {
     caption: "Home, add funds, send, a transfer waiting to be claimed, and the virtual card.",
   },
   results: [
-    <>More than 15 flows designed end to end, with every step and state, from the first screen to the success message.</>,
+    <>More than 15 flows designed in Figma, from the first screen to the success message.</>,
     <>A wide study of payment and crypto apps: about 290 screenshots. I also tested apps with real money.</>,
     <>A landing page I built in Figma Sites, my first step from drawing to building.</>,
   ],
@@ -93,7 +93,7 @@ const study: Study = {
                   "Research of payment, stablecoin and crypto apps",
                   "The feature list and every flow, which I proposed",
                   "All screens and states in Figma, about 130 frames",
-                  "UI and visual style",
+                  "UX and UI of every screen, and the visual style",
                   "The landing page, built in Figma Sites",
                 ],
               },
@@ -131,14 +131,14 @@ const study: Study = {
                 shows after.
               </>,
               <>
-                <b className="font-medium">Ready to build.</b> Every step and state is designed, including empty, waiting and
+                <b className="font-medium">Ready to build.</b> Each flow shows its steps and key states, like empty, waiting and
                 success screens.
               </>,
             ]}
           />
           <P>
-            Lytro didn&rsquo;t launch. The project is paused because a crypto company needs a lot of legal documents and
-            agreements before it can open, and that takes time.
+            Lytro isn&rsquo;t live yet. A crypto company needs a lot of legal documents and agreements before it can open, and we
+            are waiting for them to be approved.
           </P>
         </>
       ),
@@ -426,7 +426,7 @@ const study: Study = {
           />
           <H3>My first steps from drawing to building</H3>
           <P>
-            Lytro was fully designed in Figma, but this is also where I started using Figma Sites and Figma Make. Building the page
+            Lytro was designed in Figma, but this is also where I started using Figma Sites and Figma Make. Building the page
             myself, instead of handing over a mockup, was a small first step toward how I work today: designing and building in code
             with AI.
           </P>
@@ -444,17 +444,17 @@ const study: Study = {
       body: (
         <>
           <P>
-            Lytro is paused before launch. A real stablecoin app needs a lot of legal documents and agreements, so the launch is on
-            hold. The design work is complete:
+            Lytro is waiting for legal approval. A stablecoin app needs a lot of legal documents and agreements before it can open,
+            and the launch starts once they are approved. The main flows are designed in Figma:
           </P>
           <List
             items={[
               <>
-                <b className="font-medium">Every main flow,</b> from sign-up and the identity check to adding, sending and
+                <b className="font-medium">The main flows,</b> from sign-up and the identity check to adding, sending and
                 converting money, and the virtual card.
               </>,
               <>
-                <b className="font-medium">Every state,</b> including empty Home, waiting, pending and success screens.
+                <b className="font-medium">Key states,</b> like empty Home, waiting, pending and success screens.
               </>,
               <>
                 <b className="font-medium">A design system</b> behind every screen.

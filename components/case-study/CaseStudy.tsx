@@ -1,6 +1,7 @@
 import Link from "next/link"
 import SectionNav from "./SectionNav"
 import Media from "./Media"
+import { LinkButton } from "./blocks"
 import { asset } from "@/lib/asset"
 import type { Project } from "@/lib/site"
 
@@ -13,6 +14,8 @@ export type Study = {
   headline: string
   summary: React.ReactNode
   meta: { label: string; value: React.ReactNode }[]
+  /** Live products, shown as buttons under the meta row. */
+  live?: { label: string; href: string }[]
   results: React.ReactNode[]
   hero: React.ComponentProps<typeof Media>
   sections: Section[]
@@ -44,6 +47,15 @@ export default function CaseStudy({ project, study, next }: { project: Project; 
             </div>
           ))}
         </dl>
+
+        {study.live && (
+          <div className="rise mt-8 flex flex-wrap items-center gap-3" style={rise(4)}>
+            <span className="mr-1 text-[13px] text-muted-foreground">See it live</span>
+            {study.live.map((l) => (
+              <LinkButton key={l.href} href={l.href}>{l.label}</LinkButton>
+            ))}
+          </div>
+        )}
       </header>
 
       <div className="rise mt-12" style={rise(5)}>

@@ -21,6 +21,10 @@ const study: Study = {
     { label: "Timeline", value: "First version in about 2 weeks · live since June 2026" },
     { label: "Platform", value: "Web, desktop and mobile · also built into onbold.com" },
   ],
+  live: [
+    { label: "onbold.ai", href: "https://onbold.ai" },
+    { label: "onbold.com", href: "https://onbold.com" },
+  ],
   hero: {
     src: "/projects/onbold-ai/flow.mp4",
     poster: "/projects/onbold-ai/report.webp",

@@ -52,21 +52,6 @@ export type Project = {
 // Order = homepage order (four cards in one row).
 export const projects: Project[] = [
   {
-    slug: "onbold-ai",
-    title: "AI payment readiness check for online stores",
-    summary: "Shows what a payment provider would flag, and how to fix it.",
-    description: "Onbold AI: a tool that shows online stores what a payment provider would flag, and how to fix it.",
-    cover: "/projects/onbold-ai/cover.webp",
-  },
-  {
-    slug: "billpro",
-    title: "Payments and billing platform for merchants",
-    summary: "Redesign and new features for a complex billing platform.",
-    description: "Redesigning a complex payments and billing platform and shipping new features, from Figma to code with AI.",
-    cover: "/projects/billpro/cover.webp",
-    coverMobile: "/projects/billpro/cover-mobile.webp",
-  },
-  {
     slug: "buyer-journey",
     title: "Buyer journey from checkout to order portal",
     summary: "Checkout, order lookup and a self-service portal for buyers.",
@@ -75,12 +60,27 @@ export const projects: Project[] = [
     coverMobile: "/projects/buyer-journey/cover-mobile.webp",
   },
   {
+    slug: "onbold-ai",
+    title: "AI payment readiness check for online stores",
+    summary: "Shows what a payment provider would flag, and how to fix it.",
+    description: "Onbold AI: a tool that shows online stores what a payment provider would flag, and how to fix it.",
+    cover: "/projects/onbold-ai/cover.webp",
+  },
+  {
     slug: "lytro",
     title: "Mobile wallet for everyday money, built on stablecoins",
-    summary: "A mobile app for paying with stablecoins. Unreleased concept.",
-    description: "Lytro: a stablecoin mobile app that feels like normal money. Research, every flow and the design system. Concept, paused before launch.",
+    summary: "A mobile app for paying with stablecoins, waiting for legal approval.",
+    description: "Lytro: a stablecoin mobile app that feels like normal money. Research, every flow and the design system. Launch waiting for legal approval.",
     cover: "/projects/lytro/cover.webp",
     coverMobile: "/projects/lytro/cover-mobile.webp",
+  },
+  {
+    slug: "billpro",
+    title: "Payments and billing platform for merchants",
+    summary: "Redesign and new features for a complex billing platform.",
+    description: "Redesigning a complex payments and billing platform and shipping new features, from Figma to code with AI.",
+    cover: "/projects/billpro/cover.webp",
+    coverMobile: "/projects/billpro/cover-mobile.webp",
   },
 ]
 
