@@ -14,24 +14,25 @@ const study: Study = {
     </>
   ),
   meta: [
-    { label: "My role", value: "Product design: UX, UI and the design system. Front-end code for new features" },
+    { label: "My role", value: "Product design: UX and user flows, UI and the design system. Front-end code for new features" },
     { label: "Team", value: "CEO, operations team, two front-end developers, one back-end developer, me" },
-    { label: "Stage", value: "Live, with new features shipping" },
-    { label: "Platform", value: "Web app for merchants, plus pages for their buyers" },
+    { label: "Stage", value: "Live for years, used by merchants every day, with new features shipping" },
+    { label: "Platform", value: "Web app for merchants and our own team, on desktop and phone" },
   ],
+  live: [{ label: "bill.pro", href: "https://bill.pro" }],
   hero: {
     src: "/projects/billpro/product-create.mp4",
     poster: "/projects/billpro/product-create-poster.webp",
-    alt: "Screen recording: from Home, the merchant adds a product in four short steps (name, purchase type, price, product page with six photos and a colour option), then copies the product page link.",
+    alt: "Screen recording: from the Products list, the merchant presses + and adds a product in four short steps. Details: name, short description, unit and long description. Then purchase type, price, and the product page with five photos and a Colour option. After Finish, the merchant opens the new product and scrolls through its details, photos and options.",
     width: 1440,
     height: 900,
     caption:
       "Adding a product in the new Billpro: four short steps, one decision each. The last step creates a product page, a feature I built in code.",
   },
   results: [
-    <>A platform that&rsquo;s easier to use every day: clear flows for products, orders and customers, one decision at a time.</>,
-    <>A clear start. New merchants see three steps to their first order and short guides as soon as they log in.</>,
-    <>Product pages, from idea to code by me: I scoped, designed and built both the merchant side and the buyer side.</>,
+    <>No more demo calls for most new merchants. They create their first products and orders on their own.</>,
+    <>A subscription product went from 23 fields on one long page to short steps with 6 fields at most.</>,
+    <>One place for the whole job: customers, products, orders, payment links and payments, on desktop and phone.</>,
   ],
   sections: [
     {
@@ -52,8 +53,13 @@ const study: Study = {
           </P>
           <P>
             This wasn&rsquo;t only a problem on day one. Merchants use the platform every day to create products and orders,
-            manage customers and check payments. When every task feels this heavy, people make mistakes and need help, and our
-            operations team spent a lot of time explaining how the platform works.
+            manage customers and check payments. When every task feels this heavy, people make mistakes and need help.
+          </P>
+          <P>
+            And that help had a cost. Our operations team is already busy with merchants every day: calls with new merchants
+            who want to join and with merchants already on the platform, and about 100 merchant emails a day, about all kinds
+            of things. On top of that, every new merchant needed a long demo call before they could start, and every screen
+            that wasn&rsquo;t clear added more &ldquo;how do I&rdquo; questions to an already full day.
           </P>
           <Media
             src="/projects/billpro/old-product.webp"
@@ -110,8 +116,9 @@ const study: Study = {
                 title: "What I owned",
                 items: [
                   "A review of the old platform: where the journey breaks",
-                  "New flows and features across the whole platform: Home, dashboard, products, orders, customers, payments, taxes and settings",
+                  "New flows and features across the whole platform: Home, dashboard, products, orders, customers, payments, taxes, settings and many more",
                   "Every screen, desktop and mobile, as clickable prototypes in Figma",
+                  "Views for merchants and for our own team",
                   "Which changes to build first, agreed with the developers",
                   "The design system: components, states and colour tokens",
                   "Product pages: scope, flows, design and front-end code",
@@ -135,28 +142,47 @@ const study: Study = {
     {
       id: "goals",
       nav: "Goals",
-      title: "What success looked like",
+      title: "What success looked like, and how I checked it",
       body: (
-        <List
-          items={[
-            <>
-              <b className="font-medium">Clear every day.</b> Products, orders, customers and payments are easy to read and easy
-              to create, for new and experienced merchants alike.
-            </>,
-            <>
-              <b className="font-medium">One decision at a time.</b> The merchant only sees the fields that matter for what
-              they&rsquo;re selling.
-            </>,
-            <>
-              <b className="font-medium">Numbers you can trust.</b> Before saving, it&rsquo;s clear what the customer pays now
-              and what they pay every period.
-            </>,
-            <>
-              <b className="font-medium">A clear start.</b> From the first login, it&rsquo;s clear what to do first, second and
-              third.
-            </>,
-          ]}
-        />
+        <>
+          <P>
+            I set targets I could check with the people who hear every merchant question: our operations team.
+          </P>
+          <List
+            items={[
+              <>
+                <b className="font-medium">No demo needed to start.</b> A new merchant can create a first customer, product and
+                order alone, from Home.{" "}
+                <span className="text-muted-foreground">
+                  Checked by: does the operations team still need a demo call for new merchants?
+                </span>
+              </>,
+              <>
+                <b className="font-medium">Fewer &ldquo;how do I&rdquo; questions.</b> Everyday tasks shouldn&rsquo;t need
+                support.{" "}
+                <span className="text-muted-foreground">
+                  Checked by: what the operations team hears on calls and in their daily emails from merchants.
+                </span>
+              </>,
+              <>
+                <b className="font-medium">Only the fields that matter.</b> The merchant sees only what applies to what
+                they&rsquo;re selling.{" "}
+                <span className="text-muted-foreground">Checked by: counting the fields on every step, old against new.</span>
+              </>,
+              <>
+                <b className="font-medium">Numbers you can trust.</b> Before saving, it&rsquo;s clear what the customer pays now
+                and what they pay every period.{" "}
+                <span className="text-muted-foreground">
+                  Checked by: every recurring flow shows both amounts before the merchant saves.
+                </span>
+              </>,
+              <>
+                <b className="font-medium">Works where merchants are.</b> Every flow works on a phone, not only on a laptop.{" "}
+                <span className="text-muted-foreground">Checked by: designing and prototyping every screen for mobile too.</span>
+              </>,
+            ]}
+          />
+        </>
       ),
     },
     {
@@ -167,7 +193,9 @@ const study: Study = {
         <>
           <P>
             I went through the old platform screen by screen, and I worked closely with our operations team, who hears every
-            merchant question. Four patterns came up again and again.
+            merchant question. I also studied Stripe, our main competitor, from the inside: how it handles creating products,
+            customers, payment links and checkout. It showed me what merchants already expect from a billing platform, and where
+            we could be simpler. Four patterns came up again and again.
           </P>
           <H3>The most important choice came last</H3>
           <P>
@@ -205,14 +233,15 @@ const study: Study = {
             decides which fields you see, recurring products get separate initial and recurring amounts, and a missing tax,
             unit or product can be created without leaving the form. We couldn&rsquo;t change everything at once, so for each
             change I weighed how much it helps merchants against how long it takes to build, and agreed the order with the
-            developers.
+            developers and the CEO.
           </P>
           <Decision
             n={1}
             title="A Home that tells you where to start"
             options="Open on the dashboard with charts. Open on an empty list of orders. A Home page built for getting started."
+            rejected="A new merchant has no data yet, so a dashboard shows empty charts. An empty orders list says what’s missing, but not how to get there: you can’t create an order before you have a customer and a product."
             chose="A new Home page. New merchants see a “How to Get Started” banner with three steps in the right order: create a product, add a customer, create an order. Every merchant gets quick Add buttons, a short overview, and a Learning Center with guides and videos for each billing type."
-            why="A new merchant has no data yet, so charts tell them nothing. What they need is the next step, and a place to learn without calling us."
+            why="What a new merchant needs is the next step, and a place to learn without calling us. The guides cover a big part of what the demo call used to explain."
             tradeoff="Experienced merchants don’t need the steps. The banner shows only in a merchant’s first month, and the guides sit below the overview, so they never get in the way."
           >
             <Media
@@ -227,31 +256,45 @@ const study: Study = {
           <Decision
             n={2}
             title="Ask what you sell first. Everything else follows"
-            options="Keep one long form and tidy it up. Hide fields in collapsible blocks. Make the purchase type the first real question and build the rest around it."
-            chose="The purchase type comes right after the name: Single Payment, Instalment, Subscription or Metered, each with one line that explains it. The price step then shows only the fields for that type."
-            why="It’s the question merchants already think about first. Once it’s answered, the form can stop asking about things that don’t apply."
-            tradeoff="One more click before the price. In return, the price step is short and every field on it matters."
+            options="Keep one long form for every type and tidy it up. Hide fields in collapsible blocks. Ask for the purchase type first and show only what that type needs."
+            rejected="A tidier long form still shows every field to everyone: a merchant selling a single item still sees deposits, intervals and recurring amounts. Collapsible blocks hide fields, but the merchant still has to know which blocks matter for their type, and that was the question they couldn’t answer."
+            chose="Each purchase type gets only its own fields. The merchant picks Single Payment, Instalment, Subscription or Metered, each with one line that explains it. A single payment then asks for a price, a currency and a tax, and that’s it. A subscription adds its charge interval and its first and recurring amounts. Nothing from the other types shows up."
+            why="It’s the question merchants already think about first. Once it’s answered, the form stops asking about things that don’t apply, so creating a product no longer feels like a long, heavy form where you have to fill in everything."
+            tradeoff="One more choice before the price. In return, the price part is short and every field on it matters."
           >
-            <div className="my-10 grid gap-6 sm:grid-cols-2">
-              <Media
-                src="/projects/billpro/m1-basics.webp"
-                alt="Add Product, first step: product name, an auto-generated product ID, short description, unit with Add Unit, and More Options."
-                frame="crop"
-                width={1392}
-                height={1456}
-              />
+            <div className="my-10 grid items-start gap-6 sm:grid-cols-2">
               <Media
                 src="/projects/billpro/m2-type.webp"
-                alt="Add Product, purchase type step: four options with a short explanation each. Subscription is selected."
+                alt="Add Product, purchase type: four options with a short explanation each. Subscription is selected."
                 frame="crop"
                 width={1392}
                 height={1344}
+                caption="First, what you sell."
+              />
+              <Media
+                src="/projects/billpro/m3-price-single.webp"
+                alt="Add Product, price for a single payment: price, currency, subtotal, tax with Add Tax, total and Lock Price. No interval, deposit or recurring amounts."
+                frame="crop"
+                width={1392}
+                height={1700}
+                caption="A single payment: only price and tax."
               />
             </div>
             <P>
-              In the live app the whole flow is a short window with four steps: details, purchase type, price, and product page.
-              Extra fields like long description and group stay behind &ldquo;More options&rdquo;. Later, in code, I cut one
-              more step from the subscription flow by moving the charge interval into the price step.
+              I counted the fields for the same subscription product, old against new. Nothing was taken away: group, notes, fee
+              and discount are still there, behind &ldquo;More options&rdquo; and &ldquo;Show&rdquo;, for the merchants who need
+              them.
+            </P>
+            <Stats
+              items={[
+                { value: "23", label: "fields and switches on one page in the old form" },
+                { value: "11", label: "in the new flow, across three short steps" },
+                { value: "6", label: "at most on one screen" },
+                { value: "0", label: "fields removed: the rest are one click away" },
+              ]}
+            />
+            <P>
+              Later, in code, I made the subscription even shorter by moving the charge interval next to the price.
             </P>
           </Decision>
 
@@ -259,6 +302,7 @@ const study: Study = {
             n={3}
             title="Show what the customer pays now, and what they pay every period"
             options="One total, like before. A long summary list. Two clear numbers: initial and recurring."
+            rejected="One total hides the exact thing merchants were unsure about. A long summary list has the answer, but buried among ten other lines."
             chose="For recurring products, every amount is split into Initial and Recurring: subtotal, fees, discounts and total. The lock switches got plain names: Lock Price and Lock Charge Interval. Tax, units and fees can be added right inside the form with “+ Add”."
             why="For a subscription, the first payment and the monthly payment are often different. Showing both removes the “once or every month?” doubt, and adding a missing tax in place means you never lose your work."
             tradeoff="Two columns of numbers take more space. They only appear for products that recur. A single payment shows one total."
@@ -284,6 +328,7 @@ const study: Study = {
             n={4}
             title="Rebuild order creation around what the merchant has, and what they don’t"
             options="Keep the old order form and tidy it up. Split it into a long wizard. Rebuild the flow so the merchant never has to leave it."
+            rejected="Tidying up the old form kept the real problem: you couldn’t add a product from inside an order. A long wizard would slow down the task merchants repeat most, when most orders only need a customer and a product."
             chose="A new Add Order flow. If the product doesn’t exist yet, the merchant creates it right inside the order with the + button, just like a new customer. Before, there was no way to add a product from the order: they had to leave it and start again. Fee, discount and tax per product are hidden until you need them, behind one “Show” link. And with product groups, merchants sort their products into their own categories, then switch the picker to Group and find the right product faster."
             why="Order creation is the task merchants repeat most. Every time they had to stop, leave and come back, they lost their work and their trust in the tool. Now the common order takes a customer, a product and a quantity, and everything else is there when needed."
             tradeoff="Creating a customer or a product inside an order needs smaller forms in a window. I kept them to the key fields, and the full forms stay on their own pages."
@@ -291,12 +336,38 @@ const study: Study = {
             <Media
               src="/projects/billpro/order-create.mp4"
               poster="/projects/billpro/order-create-poster.webp"
-              alt="Recording: from Home, Add Order. The merchant searches and picks a customer, searches and picks a product, opens fee, discount and tax, and the summary updates to £129.00."
+              alt="Recording: from Home, Add Order. The merchant searches and picks a customer, searches and picks a product, opens fee, discount and tax, and the summary updates to £129.00. Then scrolls down, presses Add Order, and Payment Details opens."
               width={1440}
               height={900}
-              caption="Add Order: pick a customer, pick a product, open fee, discount and tax only if needed, and check the summary."
+              caption="Add Order: pick a customer, pick a product, open fee, discount and tax only if needed, check the summary, and add the order."
             />
           </Decision>
+        </>
+      ),
+    },
+    {
+      id: "journey",
+      nav: "Full journey",
+      title: "One full journey, from a new customer to a paid order",
+      body: (
+        <>
+          <P>
+            The decisions above are parts of one job. Here it is from start to finish, the way a merchant does it: add a new
+            customer, add a product, create an order, send the payment link, and see the payment arrive.
+          </P>
+          <Media
+            src="/projects/billpro/e2e.mp4"
+            poster="/projects/billpro/e2e-poster.webp"
+            alt="Recording of the full journey. The merchant adds a customer, Ella Ward, from the quick Add menu. Then adds a product, Nova Travel Pouch, as a single payment of £29 in three steps. Then creates an order for Ella with that product. The app opens Payment Details, and the merchant opens the payment link with its QR code. The buyer opens the link, agrees to the terms, enters a card and pays. Payment Successful. Back in Billpro, the payment is at the top of All Processed."
+            width={1440}
+            height={900}
+            caption="The whole job in about a minute: customer, product, order, payment link, payment. Everything starts from the same + menu."
+          />
+          <P>
+            After an order is created, the merchant lands on Payment Details, with three ways to get paid: take the card right
+            there (useful for merchants who sell by phone), send the link by email, or show a link and QR code. The buyer pays on
+            a page with the order summary next to the card form, and the payment shows up in Billpro straight away.
+          </P>
         </>
       ),
     },
@@ -353,6 +424,85 @@ const study: Study = {
             height={1800}
             caption="Billing Events: every payment in the schedule, with the actions above."
           />
+          <H3>Two kinds of users: merchants and our own team</H3>
+          <P>
+            Billpro isn&rsquo;t only for merchants. Our own team works in it too, with more tools: they see every merchant
+            profile, where each one is in onboarding, and which payment provider it&rsquo;s live on, and they can open any
+            profile to help. Merchant users see different things depending on their role. So the same screens have to work for
+            different people with different permissions.
+          </P>
+          <Media
+            src="/projects/billpro/admin-profiles.webp"
+            alt="Profiles, the admin view for our own team: counts on top for registered, onboarding, live on Stripe and live on Pay.on, then filters, date and search, and a table of merchant profiles with company and trading name, website, created date, registered country and status."
+            width={2880}
+            height={1800}
+            caption="The admin view: every merchant profile, with the same list layout merchants know from their own pages."
+          />
+          <H3>When things go wrong</H3>
+          <P>
+            A billing platform lives in its edge cases as much as in its happy paths. Forms say what&rsquo;s wrong next to the
+            field, in plain words, and the Add button stays off until the required fields are right, so a merchant can&rsquo;t
+            save a half-finished customer. A search with no results says so, and the numbers on top follow the search. And
+            failed payments have their own page, Billing Exceptions, with the retry count and whether auto retry is on.
+          </P>
+          <div className="my-10 grid items-start gap-6 sm:grid-cols-2">
+            <Media
+              src="/projects/billpro/edge-errors.webp"
+              alt="Add Customer with errors: last name is empty with 'Last name is required.', and the email 'jordan.ellis@' with 'Enter a valid email.'"
+              frame="crop"
+              width={1480}
+              height={1700}
+              caption="Errors next to the field, in plain words."
+            />
+            <Media
+              src="/projects/billpro/edge-empty.webp"
+              alt="Orders list searched for a name with no orders: the key numbers drop to zero and the table says 'No results found.'"
+              width={2880}
+              height={1000}
+              caption="No results: the numbers on top follow the search too."
+            />
+          </div>
+          <Media
+            src="/projects/billpro/edge-exceptions.webp"
+            alt="Billing Exceptions: counts on top for total, hard declines, auto retry on and auto retry off, then a table of failed payments with retry count, auto retry, order type and amount."
+            width={2880}
+            height={1800}
+            caption="Billing Exceptions: every failed payment in one list, with its retries and whether the platform will try again."
+          />
+          <H3>Built for phones too</H3>
+          <P>
+            The old platform had no mobile pages at all. The company wasn&rsquo;t focused on mobile, so on a phone some pages
+            were simply broken. When I joined, I designed mobile views that people can really use, and from the start I told
+            the team that mobile matters. Every page now has a mobile layout, not a shrunk desktop: lists keep the key columns
+            and let you swipe the key numbers, the dashboard stacks its charts, and forms become one column with the summary at
+            the end.
+          </P>
+          <div className="my-10 grid items-start gap-6 sm:grid-cols-3">
+            <Media
+              src="/projects/billpro/mob-orders.webp"
+              alt="Orders on a phone: a menu bar on top, key numbers you can swipe, filters, date and search, and a table with complete, pending, failed and active orders, each with its created date and time, UID and amount paid."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="Orders"
+            />
+            <Media
+              src="/projects/billpro/mob-dashboard.webp"
+              alt="Dashboard on a phone: Orders by Status as a large donut chart with active, failed, paused, pending and suspended counts, then Status Changes Today."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="Dashboard"
+            />
+            <Media
+              src="/projects/billpro/mob-new-order.webp"
+              alt="Add Order on a phone: customer Alex Morgan, order ID, currency, List or Group switch, product Nova Wireless Earbuds, quantity and amount."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="Add Order"
+            />
+          </div>
           <P>
             The same status icons, colours and table parts run through all of these views. They come from the design system
             described below.
@@ -383,6 +533,14 @@ const study: Study = {
           <P>
             The shared names paid off. When we launched our new brand, Onbold, I changed the colour values behind the tokens in
             one commit and kept their names, so every screen moved to the new look and no component broke.
+          </P>
+          <H3>Built for other people to use</H3>
+          <P>
+            I designed the system so the team can build without waiting for me. Every component comes with its states, like
+            hover, disabled, error and loading, so developers don&rsquo;t have to guess. Patterns repeat across the platform:
+            every list page has the same header, filters, key numbers on top and table, so a new list is mostly assembled, not
+            designed. When I built product pages in code, I used the same components from Storybook, and the new brand used the
+            same tokens.
           </P>
         </>
       ),
@@ -422,87 +580,47 @@ const study: Study = {
             or checkout integration needed. Turn it on, add photos and options, and share the link.
           </Lead>
           <P>
-            I scoped the feature, designed the user flows, and built both sides in code with AI. On the merchant side, a new last
-            step in Add Product and a product page section in the product details and edit views. On the buyer side, the page
-            where a customer sees the product and starts checkout. I sent each part as a pull request. A developer reviewed the
-            code and connected the real logic.
+            I scoped the feature, designed the user flows, and built it in code with AI. In Billpro, that&rsquo;s a new last step
+            in Add Product and a product page section in the product details and edit views. I sent each part as a pull request.
+            A developer reviewed the code and connected the real logic.
           </P>
-          <Stats
-            items={[
-              { value: "2", label: "sides I built: merchant and buyer" },
-              { value: "1", label: "link to share anywhere" },
-            ]}
-          />
-          <H3>The merchant side</H3>
-          <div className="my-10 grid gap-6 sm:grid-cols-2">
-            <Media
-              src="/projects/billpro/m4-product-page.webp"
-              alt="Add Product, last step: Enable Product page, six uploaded photos, and an attribute called Colour with the values White, Black and Silver."
-              frame="crop"
-              width={1392}
-              height={2060}
-              caption="The last step of Add Product: switch it on, upload up to six photos, add options."
-            />
-            <Media
-              src="/projects/billpro/details-pp.webp"
-              alt="Product details: the Product page section with the shareable link and a copy button, the six images, and the Colour attribute."
-              frame="crop"
-              width={1790}
-              height={1354}
-              caption="Product details: the link with a copy button, the photos and the options."
-            />
-          </div>
-          <H3>The buyer side</H3>
-          <Media
-            src="/projects/billpro/buyer-flow.mp4"
-            poster="/projects/billpro/buyer-flow-poster.webp"
-            alt="Recording of the buyer side: the buyer browses the photos, keeps the colour White, presses Continue to payment, fills in name, email, address, country and postal code, agrees to the terms, types a test card (the Visa logo appears), and presses Pay Now."
-            width={1440}
-            height={900}
-            caption="The buyer side, from the link to payment: photos, options, customer details, then the card. The order summary stays on the left the whole way. Recorded on staging with a test card."
-          />
-          <H3>Rebuilt for mobile</H3>
           <P>
-            Buyers often open a link like this on a phone, from a message or a social post. So I rebuilt the mobile views for a
-            better experience, not just a smaller desktop. The page is one column with the photo first and a full-width button.
-            In checkout, the order summary becomes a small box at the top that you can open to check your order again, so the
-            card form is the first thing you see.
+            You&rsquo;ve seen the desktop version in the video at the top. I built every part for phones too, so a merchant can
+            set up a product page and share its link from their phone.
           </P>
-          <div className="my-10 grid gap-6 sm:grid-cols-3">
+          <div className="my-10 grid items-start gap-6 sm:grid-cols-3">
             <Media
-              src="/projects/billpro/mob-1-product.webp"
-              alt="Product page on a phone: photo, merchant, product name, price, description, colour and quantity, and a full-width Continue to payment button."
+              src="/projects/billpro/mob-product-step.webp"
+              alt="Add Product on a phone, last step: Enable Product page switched on, the upload area, five photos with room for one more, and the start of Attributes."
               frame="phone"
               width={780}
               height={1688}
-              caption="1. The product"
+              caption="Last step of Add Product"
             />
             <Media
-              src="/projects/billpro/mob-2-details.webp"
-              alt="Customer details on a phone: the order summary card on top, then first name, last name, email, phone and address."
+              src="/projects/billpro/mob-product-details.webp"
+              alt="Product Details on a phone: Nova Wireless Earbuds, Active, product ID, short and long description, unit, group and purchase type, one under another."
               frame="phone"
               width={780}
               height={1688}
-              caption="2. Customer details"
+              caption="Product details"
             />
             <Media
-              src="/projects/billpro/mob-3-checkout.webp"
-              alt="Checkout on a phone: a collapsed Summary box with £129.00 at the top, then card number, expiry date, CVV, cardholder name and a Pay Now button."
+              src="/projects/billpro/mob-product-page.webp"
+              alt="The product page part of Product Details on a phone: Enable Product page, the shareable link with a copy button, five photos in a grid, and the Colour options White, Black and Silver."
               frame="phone"
               width={780}
               height={1688}
-              caption="3. Checkout, with the summary folded into a box"
+              caption="The link, photos and options"
             />
           </div>
-
-          <Decision
-            n={5}
-            title="Ship options as names now, link them to photos later"
-            options="Wait and build full variants, where each colour has its own photos. Ship simple options now: a name and a list of values."
-            chose="Options are plain names for now, like Colour: White, Black, Silver. The buyer picks one and it goes with the order, but it doesn’t switch the photo. I agreed this scope with the developers, the CEO and the team."
-            why="Linking each option to its own photos needs extra logic, and the developers didn’t have time to build it before launch. Merchants needed product pages right away, so we shipped plain options first and added the photo link to the plan as a next task."
-            tradeoff="When a buyer picks Black, the gallery still shows the white photo. Linking each option to its own photos is the next step."
-          />
+          <P>
+            I also designed and built the page buyers see, and the checkout behind it. That part of the story is in the{" "}
+            <a href="/projects/buyer-journey/" className="underline underline-offset-4 hover:no-underline">
+              buyer journey case study
+            </a>
+            .
+          </P>
 
           <H3>How I work in the code</H3>
           <P>
@@ -522,16 +640,22 @@ const study: Study = {
         <List
           items={[
             <>
-              <b className="font-medium">Easier to use, every day.</b> Creating products, orders and customers is clear and
-              quick, and merchants need much less help from our operations team.
+              <b className="font-medium">No more demo calls for most new merchants.</b> Before, every new merchant needed a long
+              demo call to learn the platform. Now most start on their own, with Home and the Learning Center. We still present
+              the platform to very big clients, but as a sales meeting, not because it&rsquo;s hard to use.
             </>,
             <>
-              <b className="font-medium">A clear start for new merchants.</b> Home and the Learning Center show them what to do
-              first, and where to learn more.
+              <b className="font-medium">Merchants feel sure of what they&rsquo;re doing.</b> The first product and the first
+              order make sense without help, and the everyday work is easy to read: where to find things, what each field means,
+              and what the customer will pay. Merchants need much less help from our operations team.
+            </>,
+            <>
+              <b className="font-medium">Everything in one place.</b> Customers, products, orders, payment links, payments and
+              failed payments, in one platform that works the same way on every page, on desktop and on a phone.
             </>,
             <>
               <b className="font-medium">Every billing type, one simple flow.</b> Single payment, instalment, subscription and
-              metered products are all created the same way.
+              metered products are all created the same way, with only the fields that apply.
             </>,
             <>
               <b className="font-medium">A new way to sell.</b> Product pages give merchants a shareable link with photos and
@@ -539,6 +663,107 @@ const study: Study = {
             </>,
           ]}
         />
+      ),
+    },
+    {
+      id: "hindsight",
+      nav: "What I'd change",
+      title: "What I'd change today, and am changing now",
+      body: (
+        <>
+          <Lead>
+            I don&rsquo;t have to guess what I&rsquo;d do differently. The app I&rsquo;m working on now is built on the Billpro
+            base, with the same functionality, and it lets me make the changes I would make to Billpro today.
+          </Lead>
+          <H3>A sidebar, not a header menu</H3>
+          <P>
+            When we started the rebuild, the CEO, the developers and I agreed to move fast and rebuild first the flows merchants
+            use every day: orders, products, payments. Even then I wanted a sidebar for the navigation, like modern platforms
+            such as Stripe have, instead of a menu in the header. The developers said it would take much more time, and the
+            platform had a lot of hard functionality to build first. So we agreed: navigation stays in the header, and the
+            sidebar waits.
+          </P>
+          <P>
+            It was the right call for that moment, but it had a cost. A header has room for only a few links, so many pages sit
+            in dropdowns and the profile menu. In the new app, the sidebar is finally there. Every page is one click away,
+            grouped by what you do: overview, manage, business. On a phone, it becomes a top bar with a full-screen menu.
+          </P>
+          <Media
+            src="/projects/billpro/ob-orders.webp"
+            alt="The new app's Orders page with a sidebar on the left: the organisation and profile at the top, Create new, then Overview (Home, Dashboard, Alerts), Manage (Orders, Products, Customers, Payments) and Business (Reports, Settings). The page shows smaller key numbers, filters, search and a compact orders table."
+            width={2880}
+            height={1800}
+            caption="The app I’m working on now: the same platform, with a sidebar. Every page is one click away."
+          />
+          <H3>Organisations: many profiles, one place</H3>
+          <P>
+            In Billpro, every merchant profile stands alone. But a business can run several brands or shops, each with its own
+            profile. In the new app I added a level above profiles: the organisation. It has its own home with totals across all
+            its profiles, its own users and its own settlements. The switcher sits at the top of the sidebar, so moving between
+            profiles is one step.
+          </P>
+          <Media
+            src="/projects/billpro/ob-switcher.webp"
+            alt="The sidebar's profile menu open over the Dashboard: All organisations, Organisation overview, Switch profile with a list of the organisation's two profiles and a tick next to the current one, the user's name and Sign out."
+            width={2880}
+            height={1800}
+            caption="Switching profile from the sidebar: the organisation’s profiles, with a tick on the one you’re in."
+          />
+          <H3>Product creation on one page, not in a window</H3>
+          <P>
+            Today I would keep the same four steps for creating a product, but not in a window. Each step would appear on one
+            page, one after another, as the merchant goes. At the end, they see everything together, check it, and create the
+            product. In a window you can only see the step you&rsquo;re on: to check the price you set two steps ago, you have
+            to go back. On one page, nothing is hidden, and the final check is easy.
+          </P>
+          <H3>Calmer and more compact</H3>
+          <P>
+            Merchants look at these screens all day, so the new app is calmer: softer, neutral colours instead of bright blue,
+            Inter instead of Poppins, and lighter status badges. It&rsquo;s also more compact: smaller page titles, filters,
+            fields and buttons, shorter table rows, and small dashboard cards with thin charts. More fits on one screen, and
+            nothing shouts.
+          </P>
+          <H3>More focus on mobile</H3>
+          <P>
+            When I started on Billpro, about three years ago, I already told the team that mobile matters, and I gave every
+            page a mobile view. But the main focus was still desktop. A payments platform is full of heavy tables that are easier to check on a big screen,
+            and our merchants mostly worked on desktop. That has changed: people now check everything on their phones first.
+            So today mobile is one of my main focuses. In the new app, the phone layout is designed on its own, not squeezed
+            from the desktop: smaller key numbers that fit in one row, compact charts, tables that keep only the columns you
+            need, and a full-screen menu that&rsquo;s easy to tap.
+          </P>
+          <div className="my-10 grid items-start gap-6 sm:grid-cols-3">
+            <Media
+              src="/projects/billpro/ob-mob-dashboard.webp"
+              alt="Dashboard in the new app on a phone: small cards with thin donut charts for orders by status, status changes, payments processed and payments captured, each with its numbers beside the chart."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="Dashboard"
+            />
+            <Media
+              src="/projects/billpro/ob-mob-orders.webp"
+              alt="Orders in the new app on a phone: small key numbers in one row, filters, date and search, and a compact table with status, created date, UID and amount paid."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="Orders"
+            />
+            <Media
+              src="/projects/billpro/ob-mob-menu.webp"
+              alt="The phone menu in the new app: the organisation and profile at the top, then Overview, Manage and Business groups with large rows that are easy to tap."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="Menu"
+            />
+          </div>
+          <H3>Start in code earlier</H3>
+          <P>
+            The sidebar waited because every change had to wait for a developer. Today I build changes like these myself, in
+            code with AI, and send them as pull requests. If I started Billpro again, I&rsquo;d work this way from the start.
+          </P>
+        </>
       ),
     },
     {

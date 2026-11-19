@@ -72,6 +72,7 @@ export function Decision({
   n,
   title,
   options,
+  rejected,
   chose,
   why,
   tradeoff,
@@ -80,6 +81,8 @@ export function Decision({
   n: number
   title: string
   options?: React.ReactNode
+  /** Why the other options were not chosen. */
+  rejected?: React.ReactNode
   chose: React.ReactNode
   why?: React.ReactNode
   tradeoff?: React.ReactNode
@@ -88,6 +91,7 @@ export function Decision({
   const rows = (
     [
       ["Options", options],
+      ["Why not the others", rejected],
       ["I chose", chose],
       ["Why", why],
       ["Trade-off", tradeoff],
