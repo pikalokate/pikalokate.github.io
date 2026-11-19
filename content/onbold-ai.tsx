@@ -187,6 +187,15 @@ const study: Study = {
             Reading a site takes time. A spinner for ten seconds feels broken, and the merchant leaves before the report appears.
             I could only test how that wait feels by building it, not by drawing it.
           </P>
+          <H3>AI tools already taught people how this should feel</H3>
+          <P>
+            Before designing, I studied how AI products talk and show their work. From ChatGPT, I looked at how it shows its
+            thinking step by step while you wait, instead of a blank screen. From Google Gemini&rsquo;s Canvas, I took the idea of
+            the chat on the left and the result on the right, so every message visibly changes something. I also looked at AI app
+            builders like Base44, and at how all these tools keep a conversation moving. Merchants already know these patterns from
+            tools they use every day, so I built on them: the visible scan steps and the split between chat and report both
+            started here.
+          </P>
         </>
       ),
     },
@@ -259,8 +268,8 @@ const study: Study = {
             n={4}
             title="A score you can feel going up"
             options="No score. A bare percentage. A score with named levels that moves as you talk."
-            chose="A Commerce Readiness Score with four named levels: Work needed, Good Foundation, Strong and High. It never starts at zero, it rises with each answer, and crossing into a new level plays a small sparkle."
-            why="On its own, 62% reads like a bad grade. “Good Foundation” reads like a starting point. And progress you can feel is the best reason to answer one more question."
+            chose="A Commerce Readiness Score with four named levels: Work needed, Good Foundation, Strong and High. I set a floor: the score always starts at 62%, Good Foundation, never lower, even when we find several risks. From there it only goes up with each answer, and crossing into a new level plays a small sparkle."
+            why="A merchant who was declined comes to us for help. A low score on the first screen would disappoint them, and many would leave. On its own, 62% reads like a bad grade. “Good Foundation” reads like a starting point. And progress you can feel is the best reason to answer one more question."
             tradeoff="A score can sound like a promise. The note under each level talks about what is in place, never about approval."
           >
             <Media
@@ -300,6 +309,59 @@ const study: Study = {
             </div>
             <P>Answer, see what changed, open the report, come back. The report works like a document that keeps updating.</P>
           </Decision>
+
+          <H3>Every screen, adapted for the phone</H3>
+          <P>
+            Most people now browse on their phone, and our ads open on a phone first. So I treated mobile as the main screen, not
+            an extra. Every part of the flow is adapted: the landing page, the scan, the chat and the report. In the chat, the
+            phone shows two quick replies instead of four, so the message box always stays in view. The score circle and its
+            level sit side by side in one card, the fact cards stack in one column, and each risk opens its &ldquo;How to fix&rdquo;
+            in place.
+          </P>
+          <div className="my-10 grid gap-6 sm:grid-cols-3">
+            <Media
+              src="/projects/onbold-ai/m-landing.webp"
+              alt="Onbold landing page on a phone: the headline, a short intro and the website field with northwindgoods.com typed in."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="1. Paste your website"
+            />
+            <Media
+              src="/projects/onbold-ai/m-scan.webp"
+              alt="The scan on a phone: Checking compliance signals, 73% complete, with finished groups folded into one line each."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="2. The scan, step by step"
+            />
+            <Media
+              src="/projects/onbold-ai/m-chat-start.webp"
+              alt="The first chat message on a phone: what we found, what happens next, a question about card payments, and two quick replies above the message box."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="3. Two quick replies, not four"
+            />
+          </div>
+          <div className="my-10 grid gap-6 sm:grid-cols-2">
+            <Media
+              src="/projects/onbold-ai/m-report.webp"
+              alt="The report on a phone: onboarding progress, the readiness score at 68% with the level Strong, and the business and industry cards stacked."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="4. The report: score, then facts"
+            />
+            <Media
+              src="/projects/onbold-ai/m-risks.webp"
+              alt="Risks on a phone: a High risk, Missing company details in footer, with its How to fix panel open, and a Medium risk below."
+              frame="phone"
+              width={780}
+              height={1688}
+              caption="5. Each risk opens its fix in place"
+            />
+          </div>
 
           <H3>One more detail: the end is not a dead end</H3>
           <P>
@@ -445,6 +507,14 @@ const study: Study = {
       title: "What shipped",
       body: (
         <>
+          <Stats
+            items={[
+              { value: "~15 s", label: "from pasting a URL to the first report" },
+              { value: "15", label: "checks in 4 groups, shown live during the scan" },
+              { value: "0", label: "fields to fill in before the merchant sees a result" },
+              { value: "4", label: "score levels, from Work needed to High" },
+            ]}
+          />
           <List
             items={[
               <>
@@ -469,6 +539,18 @@ const study: Study = {
             ]}
           />
         </>
+      ),
+    },
+    {
+      id: "hindsight",
+      nav: "What I'd change",
+      title: "What I’d change today",
+      body: (
+        <P>
+          I&rsquo;d design the end of the check as the first step of onboarding from day one. Today, after applying, the merchant
+          waits for our team. With onboarding built in, they could go straight on to add their business details and documents,
+          with no pause. That&rsquo;s exactly where the tool is going now.
+        </P>
       ),
     },
   ],
