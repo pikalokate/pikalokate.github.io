@@ -579,11 +579,13 @@ export default function Talk({ notes }: { notes?: PresenterNotes }) {
         <p className="mt-5 max-w-[640px] text-[18px] leading-7 text-muted-foreground">
           From a product the seller creates, to the page the buyer pays on, to the portal where they manage the order.
         </p>
-        <ol className="mt-8 flex flex-wrap items-center gap-2 text-[14px]">
+        <ol className="mt-8 flex flex-col items-start gap-2 text-[14px] sm:flex-row sm:flex-wrap sm:items-center">
           {journey.map((step, i) => (
             <li key={step} className="flex items-center gap-2">
+              {/* Phones: numbered steps in a column. Wider screens: one row with arrows. */}
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#f0f0f0] text-[12px] text-muted-foreground sm:hidden">{i + 1}</span>
               <span className="rounded-full border border-border px-3.5 py-1.5">{step}</span>
-              {i < journey.length - 1 && <span className="text-muted-foreground">→</span>}
+              {i < journey.length - 1 && <span className="hidden text-muted-foreground sm:inline">→</span>}
             </li>
           ))}
         </ol>
