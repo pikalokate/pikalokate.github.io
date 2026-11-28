@@ -19,7 +19,7 @@ export default function CopyField({ label, value }: { label: string; value: stri
     >
       <span className="min-w-0">
         <span className="block text-[12px] text-muted-foreground">{label}</span>
-        <span className="mt-0.5 block text-[14px] leading-5">{value}</span>
+        <span className="mt-0.5 block text-[14px] leading-5 whitespace-pre-line">{value}</span>
       </span>
       <span className={`flex size-10 shrink-0 items-center justify-center self-center rounded-lg ${done ? "text-[#16a34a]" : "text-foreground"}`} aria-label={done ? "Copied" : "Copy"}>
         {done ? (
