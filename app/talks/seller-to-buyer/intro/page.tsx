@@ -77,12 +77,11 @@ export default function Page() {
           ))}
         </ol>
 
-        <div className="mt-3 flex flex-col gap-4 rounded-2xl border border-dashed border-border p-6 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
-          <div className="max-w-[720px]">
+        <div className="mt-3 flex flex-col gap-4 rounded-2xl border border-dashed border-border p-6 sm:flex-row sm:items-end sm:justify-between sm:gap-16">
+          <div className="max-w-[740px]">
             <p className="text-[15px] font-medium">The case study page</p>
             <p className="mt-2 text-[15px] leading-6 text-muted-foreground">
-              <span className="text-foreground">No need to read it before our call.</span> I&apos;d even suggest skipping it, since
-              I&apos;ll walk you through everything on the call. It&apos;s there if you want to look back at something afterwards.
+              <span className="text-foreground">No need to read it before our call.</span> You can skip it, since I&apos;ll walk you through everything on our call. It&apos;s there to look back at afterwards, or to explore if you&apos;re curious.
             </p>
           </div>
           <Link href="/talks/seller-to-buyer/" className="shrink-0 self-end text-[14px] text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground">
