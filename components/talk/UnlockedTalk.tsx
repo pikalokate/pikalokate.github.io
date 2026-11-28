@@ -13,7 +13,8 @@ export default function UnlockedTalk() {
     const k = location.hash.slice(1)
     if (!k) return
     crypto.subtle
-      .importKey("raw", bytes(k), "AES-GCM", false, ["decrypt"])
+      .digest("SHA-256", new TextEncoder().encode(k))
+      .then((raw) => crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["decrypt"]))
       .then((key) => crypto.subtle.decrypt({ name: "AES-GCM", iv: bytes(locked.iv) }, key, bytes(locked.data)))
       .then((d) => setNotes(JSON.parse(new TextDecoder().decode(d))))
       .catch(() => {})
